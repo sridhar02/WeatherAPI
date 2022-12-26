@@ -1,6 +1,6 @@
 // run `node index.js` in the terminal
-import express from 'express';
-import weatherRoutes from './routes/weather.js';
+const express = require("express");
+const weatherRoutes = require("./routes/weather.js");
 
 const app = express();
 
@@ -8,9 +8,9 @@ const app = express();
 app.use(express.json());
 
 // routes
-app.use('/weather', weatherRoutes);
+app.use("/weather", weatherRoutes);
 const PORT = 3000;
 
-app.get('/', (req, res) => res.send('server / end point is working'));
+app.get("/", (req, res) => res.send("server / end point is working"));
 
-app.listen(PORT, () => console.log('server is running'));
+app.listen(PORT, () => console.log("server is running"));
