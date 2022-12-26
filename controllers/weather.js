@@ -1,4 +1,4 @@
-import { getWeatherData } from '../Utils';
+const { getWeatherData } = require("../Utils");
 
 // export class Weather {
 //   static getWeather = async (req, res) => {
@@ -9,9 +9,10 @@ import { getWeatherData } from '../Utils';
 //   };
 // }
 
-export const getWeather = async (req, res) => {
+const getWeather = async (req, res) => {
   const { cityName } = req.params;
   const data = await getWeatherData(cityName);
-  console.log(data);
   res.status(200).json(data);
 };
+
+module.exports = { getWeather };
