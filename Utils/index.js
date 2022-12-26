@@ -14,12 +14,12 @@ const getWeatherData = async (city) => {
   return respJSON;
 };
 
-const getForeCast = async ({ city, days }) => {
+const getForeCastData = async ({ cityName: city, days }) => {
   const response = await fetch(
-    `${BASE_URL}/forecast.json?key=${API_KEY}&q=${city}&days=${days}`
+    `${BASE_URL}/forecast.json?key=${API_KEY}&q=${city}&days=${days}&aqi=no&alerts=no`
   );
   const respJSON = await response.json();
   return respJSON;
 };
 
-module.exports = { getWeatherData, getForeCast };
+module.exports = { getWeatherData, getForeCastData };
